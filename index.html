@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calmf_ Introduction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .header .slogan {
+            font-size: 24px;
+            font-weight: 500;
+            color: #3498db;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+        }
+        
+        .product-title {
+             font-size: 26px;
+             font-weight: 700;
+             color: #2c3e50;
+             margin-bottom: 10px;
+        }
+
+        .product-subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background-color: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: '✓';
+            color: #2ecc71;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .brand-identity {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .identity-item {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .identity-item span {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .recommend {
+            background-color: #eaf6ff;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        .recommend h4 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #777;
+        }
+        
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 2px;
+        }
+
+        .bg-green { background-color: #e8f5e9; color: #2e7d32; }
+        .bg-blue { background-color: #e3f2fd; color: #1565c0; }
+        .bg-purple { background-color: #f3e5f5; color: #6a1b9a; }
+        .bg-yellow { background-color: #fffde7; color: #f57f17; }
+        .bg-red { background-color: #ffebee; color: #c62828; }
+        
+        strong {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Calm.f (캄프)</h1>
+            <p class="slogan">Be Calmftable!</p>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">브랜드 소개</h2>
+            <p>캄프는 '유익한 라이프 뷰티'를 통해 삶의 가치를 높이는 것을 목표로 하는 미용 및 건강 제품 제조업체입니다. <strong>신뢰</strong>의 경영 철학과 <strong>조화, 균형, 정직, 믿음</strong>의 방침에 따라 고객 만족과 행복을 위해 최선을 다합니다. 건강하고 아름다운 삶을 추구하는 현대인들에게 내면의 아름다움을 찾아주는 솔루션을 제공합니다.</p>
+            <div class="brand-identity">
+                <div class="identity-item"><span>💖</span>감성적</div>
+                <div class="identity-item"><span>✨</span>진정성</div>
+                <div class="identity-item"><span>🌿</span>세련된</div>
+                <div class="identity-item"><span>🌍</span>에코프렌들리</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">주요 상품</h2>
+
+            <div style="margin-bottom: 40px;">
+                <h3 class="product-title">1. 캄프 워터드롭 카밍젤</h3>
+                <p class="product-subtitle">트리플 케어 시스템으로 완성하는 <strong>진정 + 보습 + 광채</strong></p>
+                <p>무더운 여름, 달아오르고 지친 피부에 즉각적인 편안함을 선사하는 올인원 멀티 유즈 젤입니다. 얼굴부터 몸까지 다양하게 사용 가능하여 시간과 노력을 절약해주는 스마트한 제품입니다.</p>
+                <div class="grid-container">
+                    <div class="card">
+                        <h4 class="card-title">💧 주요 특징</h4>
+                        <ul>
+                            <li><strong>진정 케어 (쿨링):</strong> 피부 열감 즉각 감소 및 붉은기 완화</li>
+                            <li><strong>보습 케어 (하이드레이팅):</strong> 5중 히알루론산으로 깊은 속보습</li>
+                            <li><strong>광채 케어 (글로잉):</strong> 수분 코팅으로 투명한 생기 충전</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">🌿 핵심 성분</h4>
+                        <ul>
+                            <li><strong>히알루론산:</strong> 5중 복합으로 강력 보습</li>
+                            <li><strong>나이아신아마이드:</strong> 피부톤 & 장벽 강화</li>
+                            <li><strong>알란토인:</strong> 민감 피부 보호 및 진정</li>
+                            <li><strong>판테놀:</strong> 비타민 B5 변환, 보습 & 진정</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">安心 포뮬러</h4>
+                        <p>
+                            <span class="badge bg-green">EWG 그린 등급</span>
+                            <span class="badge bg-blue">6-FREE 포뮬러</span>
+                            <span class="badge bg-purple">온 가족 사용 가능</span>
+                        </p>
+                        <p style="font-size:14px; color: #666;">* 6-FREE: 미네랄 오일, 인공색소, 인공향료, 실리콘, 파라벤, 알코올 무첨가</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 class="product-title">2. 캄프 퀵 글로우 버블 세럼</h3>
+                <p class="product-subtitle"><strong>10초</strong> 만에 끝내는 피부 관리 혁명</p>
+                <p>바쁜 현대인을 위해 마스크팩의 효과를 10초 만에 누릴 수 있도록 개발된 혁신적인 올인원 버블 세럼입니다. 끈적임 없이 즉시 흡수되어 간편하게 빛나는 피부를 완성합니다.</p>
+                <div class="grid-container">
+                    <div class="card">
+                        <h4 class="card-title">⚡ 주요 특징</h4>
+                        <ul>
+                            <li><strong>혁신적인 10초 케어:</strong> 마스크팩 1/60 시간으로 완벽 케어</li>
+                            <li><strong>버블 올인원 효과:</strong> 수분, 미백, 탄력, 진정, 광채 5 in 1</li>
+                            <li><strong>끈적임 제로:</strong> 마이크로 버블 기술로 산뜻한 물광 보습막</li>
+                            <li><strong>클린 성분:</strong> 건강한 피부의 약산성(pH 5~6) 처방</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">🌿 핵심 성분</h4>
+                        <ul>
+                            <li><strong>수분:</strong> 초저분자 히알루론산</li>
+                            <li><strong>미백:</strong> 쌀겨 추출물</li>
+                            <li><strong>탄력/광채:</strong> 특허 아미노산 복합체</li>
+                            <li><strong>진정:</strong> 병풀 유래 3종 추출물</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="recommend">
+                    <h4>👍 이런 분들께 추천합니다!</h4>
+                    <p>바쁜 아침, 여러 단계 스킨케어가 부담스러운 분, 마스크팩의 끈적임이 불편했던 분, 빠르고 쉽게 촉촉한 피부를 만들고 싶은 분</p>
+                </div>
+            </div>
+            
+             <div style="margin-bottom: 40px;">
+                <h3 class="product-title">3. 캄프 그린 탠저린 플루이드 카밍 패드</h3>
+                <p class="product-subtitle">하나의 패드로 <strong>5가지 멀티 케어</strong> (진정, 부스팅, 각질, 피부톤, 결 개선)</p>
+                <div class="grid-container">
+                    <div class="card">
+                        <h4 class="card-title">🍊 주요 특징</h4>
+                         <ul>
+                             <li><strong>진정 & 각질 케어:</strong> 풋귤 추출물 3,100ppm 함유 (레몬의 10배 비타민C)</li>
+                             <li><strong>브라이트닝:</strong> 나이아신아마이드 20,000ppm 함유</li>
+                             <li><strong>강력 보습:</strong> 1회 사용 시 36시간 수분 지속</li>
+                         </ul>
+                    </div>
+                    <div class="card">
+                         <h4 class="card-title">🏆 인증 및 수상</h4>
+                         <ul>
+                             <li>2024년 상반기 <strong>화해 어워즈 비건 패드 부문 1위</strong></li>
+                             <li>이탈리아 <strong>V-Label 비건 인증</strong> 완료</li>
+                             <li>저자극 테스트 완료 (민감성 피부 사용 가능)</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 class="product-title">4. 캄프 미스티 포레스트 퍼퓸드 핸드 크림</h3>
+                <p class="product-subtitle">실크처럼 부드럽고 끈적임 없는 <strong>멀티 유즈</strong> 핸드크림</p>
+                <div class="grid-container">
+                    <div class="card">
+                         <h4 class="card-title">🌿 주요 성분</h4>
+                         <ul>
+                             <li><strong>살나무 씨 버터:</strong> 우수한 보습 및 장벽 강화 (코메도제닉 지수 0)</li>
+                             <li><strong>살비아잎 추출물:</strong> 피부 진정 및 항염증 효과</li>
+                         </ul>
+                    </div>
+                     <div class="card">
+                         <h4 class="card-title">💡 활용법</h4>
+                         <p>핸드케어 외에 향수 대용으로 목이나 손목, 헤어에도 가볍게 발라 은은한 향기를 더할 수 있습니다.</p>
+                     </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="product-title">5. 캄프 단백 레시피 (밸런스 쉐이크)</h3>
+                <p class="product-subtitle">영양과 맛을 모두 잡은 <strong>고단백 식사 대용 쉐이크</strong></p>
+                <p>바쁜 현대인을 위해 영양성분과 맛의 조화를 이룬 고단백, 고품질의 식사 대용 쉐이크입니다.</p>
+                <div class="grid-container">
+                    <div class="card">
+                        <h4 class="card-title">📊 균형 잡힌 영양</h4>
+                        <ul>
+                            <li><strong>단백질 19.5g:</strong> 동·식물성 50:50 황금 비율 (WPI 사용)</li>
+                            <li><strong>식이섬유 9.7g:</strong> 1일 기준치 39% 충족</li>
+                            <li><strong>비타민 8종 & 미네랄 3종</strong> 함유</li>
+                            <li><strong>유산균</strong> 포함으로 장 건강 케어</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">⭐ 주요 특징</h4>
+                        <ul>
+                            <li><strong>체중 조절:</strong> 2시간 이상 지속되는 포만감</li>
+                            <li><strong>소화 용이:</strong> 유당 등을 분리한 WPI로 흡수율 UP</li>
+                            <li><strong>안전성:</strong> HACCP 인증, NON-GMO 제품</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <h3>Calm.f Contact</h3>
+            <p>
+                <a href="https://smartstore.naver.com/calmf" target="_blank">Website</a> |
+                <a href="https://instagram.com/calmf_official" target="_blank">Instagram</a>
+            </p>
+            <p>
+                Email: jinnyyu07@naver.com | Tel: +82.2.739.6587 | Fax: +82.2.739.6588
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
